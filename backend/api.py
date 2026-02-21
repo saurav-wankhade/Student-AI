@@ -11,7 +11,7 @@ from sqlalchemy.orm import sessionmaker, declarative_base, Session
 from passlib.context import CryptContext
 
 # Import your AI logic
-from backend import ask_gemini_multimodal, DB_PERSIST_DIRECTORY
+from .backend import ask_gemini_multimodal, DB_PERSIST_DIRECTORY
 from langchain_community.vectorstores import Chroma
 # UPDATED: Using Google Embeddings to match ingest.py
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
@@ -139,4 +139,5 @@ if __name__ == "__main__":
     # Render dynamic port binding
     port = int(os.environ.get("PORT", 8000))
     print(f"🚀 Starting SPPU Assistant on port {port}...")
+
     uvicorn.run(app, host="0.0.0.0", port=port)
