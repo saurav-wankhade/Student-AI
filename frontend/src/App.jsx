@@ -3,7 +3,7 @@ import axios from 'axios';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Send, Paperclip, Bot, User, X, Loader2, Plus, MessageSquare, Trash2, Menu, ChevronLeft, Database, Zap, Download } from 'lucide-react';
 
-const API_URL = "https://student-ai-zvm5.onrender.com/"; 
+const API_URL = "https://student-ai-zvm5.onrender.com"; 
 
 function App() {
   const [sessions, setSessions] = useState([]);
