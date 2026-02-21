@@ -19,10 +19,12 @@ from langchain_google_genai import GoogleGenerativeAIEmbeddings
 # --- SETUP ---
 app = FastAPI()
 
-# --- FIXING THE CORS ERROR ---
+from fastapi.middleware.cors import CORSMiddleware
+
+# --- 🎯 THE CRITICAL CORS FIX ---
 origins = [
-    "http://localhost:5173",  # For local testing
-    "https://student-ai-assistant-kgnq.onrender.com",
+    "http://localhost:5173",  # Local Vite testing
+    "https://student-ai-assistant-kgnq.onrender.com", # Your EXACT frontend URL from logs
 ]
 
 app.add_middleware(
@@ -148,4 +150,5 @@ if __name__ == "__main__":
     print(f"🚀 Starting SPPU Assistant on port {port}...")
 
     uvicorn.run(app, host="0.0.0.0", port=port)
+
 
